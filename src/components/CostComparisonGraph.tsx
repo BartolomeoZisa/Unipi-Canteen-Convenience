@@ -15,6 +15,7 @@ interface GraphDataPoint {
   perMeal: number;
   flatTariff?: number;
   carnet?: number;
+  carnetMix?: number;
   recommended: string;
 }
 
@@ -45,6 +46,7 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
       const perMealOption = result.options.find(opt => opt.type === 'per-meal');
       const flatOption = result.options.find(opt => opt.type === 'flat');
       const carnetOption = result.options.find(opt => opt.type === 'carnet');
+      const carnetMixOption = result.options.find(opt => opt.type === 'carnet-mix');
       
       const dataPoint: GraphDataPoint = {
         meals,
@@ -58,6 +60,10 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
       
       if (carnetOption) {
         dataPoint.carnet = carnetOption.totalCost;
+      }
+
+      if (carnetMixOption) {
+        dataPoint.carnetMix = carnetMixOption.totalCost;
       }
       
       data.push(dataPoint);
@@ -142,6 +148,15 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
               stroke="#f59e0b" 
               strokeWidth={2}
               name="Carnet"
+              connectNulls={false}
+            />
+            
+            <Line 
+              type="monotone" 
+              dataKey="carnetMix" 
+              stroke="#8b5cf6" 
+              strokeWidth={2}
+              name="Best Carnet Mix"
               connectNulls={false}
             />
           </LineChart>

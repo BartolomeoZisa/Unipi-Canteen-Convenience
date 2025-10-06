@@ -8,9 +8,13 @@
       "label": "ISEE Value",
       "placeholder": "Enter your ISEE value in €"
     },
-    "meals": {
-      "label": "Number of Meals",
-      "placeholder": "Total meals needed"
+    "mealsPerDay": {
+      "label": "Meals per Day",
+      "placeholder": "Select meals per day"
+    },
+    "days": {
+      "label": "Number of Days",
+      "placeholder": "For how many days?"
     },
     "mealType": {
       "label": "Preferred Meal Type",
@@ -41,8 +45,10 @@
   "errors": {
     "iseeRequired": "ISEE value is required",
     "iseeInvalid": "Please enter a valid ISEE value",
-    "mealsRequired": "Number of meals is required",
-    "mealsInvalid": "Please enter a valid number of meals"
+    "mealsPerDayRequired": "Meals per day is required",
+    "mealsPerDayInvalid": "Please enter a valid number of meals per day",
+    "daysRequired": "Number of days is required",
+    "daysInvalid": "Please enter a valid number of days"
   },
   "language": {
     "select": "Select Language"
@@ -54,7 +60,7 @@
   "graph": {
     "title": "Cost Comparison Across Meal Quantities",
     "subtitle": "Compare how different tariff options perform as meal quantities change based on your ISEE and meal type",
-    "note": "Note: Graph shows the most cost-effective option at each meal quantity. For high meal quantities, flat tariffs may require multiple periods.",
+    "note": "Note: Graph shows the most cost-effective option at each meal quantity. 'Best Carnet Mix' uses a greedy algorithm to find optimal carnet combinations.",
     "showGraph": "Show Cost Comparison Graph",
     "hideGraph": "Hide Graph"
   }

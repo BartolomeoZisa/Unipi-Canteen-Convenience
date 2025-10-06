@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Calculator, Globe, Info, ChevronDown, ChevronUp, BarChart3 } from 'lucide-react';
-import { CalculationInput, MealType, CalculationResult } from '@/types';
+import { CalculationInput, FormInput, MealType, CalculationResult } from '@/types';
 import { TariffCalculator, PriceCalculator } from '@/services/calculationService';
 import { ResultsDisplay } from './ResultsDisplay';
 import { CostComparisonGraph } from './CostComparisonGraph';
@@ -14,9 +14,10 @@ const createCalculator = () => {
 
 export const TariffCalculatorForm: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const [formData, setFormData] = useState<Partial<CalculationInput>>({
+  const [formData, setFormData] = useState<Partial<FormInput>>({
     isee: undefined,
-    totalMeals: undefined,
+    mealsPerDay: undefined,
+    days: undefined,
     isScholarshipEligible: false,
     preferredMealType: MealType.COMPLETE
   });
@@ -36,10 +37,16 @@ export const TariffCalculatorForm: React.FC = () => {
       newErrors.isee = t('errors.iseeInvalid');
     }
 
-    if (!formData.totalMeals) {
-      newErrors.totalMeals = t('errors.mealsRequired');
-    } else if (formData.totalMeals <= 0) {
-      newErrors.totalMeals = t('errors.mealsInvalid');
+    if (!formData.mealsPerDay) {
+      newErrors.mealsPerDay = t('errors.mealsPerDayRequired');
+    } else if (formData.mealsPerDay <= 0) {
+      newErrors.mealsPerDay = t('errors.mealsPerDayInvalid');
+    }
+
+    if (!formData.days) {
+      newErrors.days = t('errors.daysRequired');
+    } else if (formData.days <= 0) {
+      newErrors.days = t('errors.daysInvalid');
     }
 
     setErrors(newErrors);
@@ -51,9 +58,12 @@ export const TariffCalculatorForm: React.FC = () => {
     
     if (!validateForm()) return;
 
+    const totalMeals = formData.mealsPerDay! * formData.days!;
+    
     const input: CalculationInput = {
       isee: formData.isee!,
-      totalMeals: formData.totalMeals!,
+      totalMeals: totalMeals,
+      mealsPerDay: formData.mealsPerDay!,
       isScholarshipEligible: formData.isScholarshipEligible || false,
       preferredMealType: formData.preferredMealType || MealType.COMPLETE
     };
@@ -140,46 +150,76 @@ export const TariffCalculatorForm: React.FC = () => {
         {/* Calculator Form */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* ISEE Input - Full width row */}
+            <div>
+              <label htmlFor="isee" className="block text-sm font-medium text-gray-700 mb-2">
+                {t('form.isee.label')}
+              </label>
+              <input
+                type="number"
+                id="isee"
+                min="0"
+                step="0.01"
+                value={formData.isee || ''}
+                onChange={(e) => setFormData({ ...formData, isee: parseFloat(e.target.value) || undefined })}
+                placeholder={t('form.isee.placeholder')}
+                className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  errors.isee ? 'border-red-500' : 'border-gray-300'
+                }`}
+              />
+              {errors.isee && <p className="text-red-500 text-sm mt-1">{errors.isee}</p>}
+            </div>
+
+            {/* Meals Per Day and Days - Side by side */}
             <div className="grid md:grid-cols-2 gap-6">
-              {/* ISEE Input */}
+              {/* Meals Per Day Input */}
               <div>
-                <label htmlFor="isee" className="block text-sm font-medium text-gray-700 mb-2">
-                  {t('form.isee.label')}
+                <label htmlFor="mealsPerDay" className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('form.mealsPerDay.label')}
                 </label>
-                <input
-                  type="number"
-                  id="isee"
-                  min="0"
-                  step="0.01"
-                  value={formData.isee || ''}
-                  onChange={(e) => setFormData({ ...formData, isee: parseFloat(e.target.value) || undefined })}
-                  placeholder={t('form.isee.placeholder')}
+                <select
+                  id="mealsPerDay"
+                  value={formData.mealsPerDay || ''}
+                  onChange={(e) => setFormData({ ...formData, mealsPerDay: parseInt(e.target.value) || undefined })}
                   className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    errors.isee ? 'border-red-500' : 'border-gray-300'
+                    errors.mealsPerDay ? 'border-red-500' : 'border-gray-300'
                   }`}
-                />
-                {errors.isee && <p className="text-red-500 text-sm mt-1">{errors.isee}</p>}
+                >
+                  <option value="">{t('form.mealsPerDay.placeholder')}</option>
+                  <option value="1">1 meal per day</option>
+                  <option value="2">2 meals per day</option>
+                </select>
+                {errors.mealsPerDay && <p className="text-red-500 text-sm mt-1">{errors.mealsPerDay}</p>}
               </div>
 
-              {/* Meals Input */}
+              {/* Days Input */}
               <div>
-                <label htmlFor="meals" className="block text-sm font-medium text-gray-700 mb-2">
-                  {t('form.meals.label')}
+                <label htmlFor="days" className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('form.days.label')}
                 </label>
                 <input
                   type="number"
-                  id="meals"
+                  id="days"
                   min="1"
-                  value={formData.totalMeals || ''}
-                  onChange={(e) => setFormData({ ...formData, totalMeals: parseInt(e.target.value) || undefined })}
-                  placeholder={t('form.meals.placeholder')}
+                  value={formData.days || ''}
+                  onChange={(e) => setFormData({ ...formData, days: parseInt(e.target.value) || undefined })}
+                  placeholder={t('form.days.placeholder')}
                   className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    errors.totalMeals ? 'border-red-500' : 'border-gray-300'
+                    errors.days ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
-                {errors.totalMeals && <p className="text-red-500 text-sm mt-1">{errors.totalMeals}</p>}
+                {errors.days && <p className="text-red-500 text-sm mt-1">{errors.days}</p>}
               </div>
             </div>
+
+            {/* Total Meals Display */}
+            {formData.mealsPerDay && formData.days && (
+              <div className="p-3 bg-blue-50 border border-blue-200 rounded-md">
+                <p className="text-sm text-blue-800">
+                  <strong>Total meals: {formData.mealsPerDay * formData.days}</strong>
+                </p>
+              </div>
+            )}
 
             {/* Meal Type Selection */}
             <div>
@@ -233,8 +273,8 @@ export const TariffCalculatorForm: React.FC = () => {
           </form>
         </div>
 
-        {/* Graph Toggle Button - Available after ISEE and meal type are set */}
-        {formData.isee && formData.preferredMealType && (
+        {/* Graph Toggle Button - Available after ISEE, meal type, and meals per day are set */}
+        {formData.isee && formData.preferredMealType && formData.mealsPerDay && (
           <div className="text-center mb-6">
             <button
               type="button"
@@ -248,15 +288,16 @@ export const TariffCalculatorForm: React.FC = () => {
         )}
 
         {/* Cost Comparison Graph - Independent from results */}
-        {showGraph && formData.isee && formData.preferredMealType && (
+        {showGraph && formData.isee && formData.preferredMealType && formData.mealsPerDay && (
           <CostComparisonGraph
             baseInput={{
-              isee: formData.isee,
+              isee: formData.isee!,
+              mealsPerDay: formData.mealsPerDay!,
               isScholarshipEligible: formData.isScholarshipEligible || false,
-              preferredMealType: formData.preferredMealType
+              preferredMealType: formData.preferredMealType!
             }}
-            maxMeals={300}
-            stepSize={5}
+            maxMeals={400}
+            stepSize={10}
           />
         )}
 

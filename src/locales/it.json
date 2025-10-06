@@ -8,9 +8,13 @@
       "label": "Valore ISEE",
       "placeholder": "Inserisci il tuo valore ISEE in €"
     },
-    "meals": {
-      "label": "Numero di Pasti",
-      "placeholder": "Pasti totali necessari"
+    "mealsPerDay": {
+      "label": "Pasti al Giorno",
+      "placeholder": "Seleziona pasti al giorno"
+    },
+    "days": {
+      "label": "Numero di Giorni",
+      "placeholder": "Per quanti giorni?"
     },
     "mealType": {
       "label": "Tipo di Pasto Preferito",
@@ -41,8 +45,10 @@
   "errors": {
     "iseeRequired": "Il valore ISEE è obbligatorio",
     "iseeInvalid": "Inserisci un valore ISEE valido",
-    "mealsRequired": "Il numero di pasti è obbligatorio",
-    "mealsInvalid": "Inserisci un numero valido di pasti"
+    "mealsPerDayRequired": "I pasti al giorno sono obbligatori",
+    "mealsPerDayInvalid": "Inserisci un numero valido di pasti al giorno",
+    "daysRequired": "Il numero di giorni è obbligatorio",
+    "daysInvalid": "Inserisci un numero valido di giorni"
   },
   "language": {
     "select": "Seleziona Lingua"
@@ -54,8 +60,28 @@
   "graph": {
     "title": "Confronto Costi per Quantità di Pasti",
     "subtitle": "Confronta come si comportano le diverse opzioni tariffarie al variare delle quantità di pasti basato sui tuoi ISEE e tipo di pasto",
-    "note": "Nota: Il grafico mostra l'opzione più conveniente per ogni quantità di pasti. Per grandi quantità di pasti, le tariffe flat potrebbero richiedere più periodi.",
-    "showGraph": "Mostra Grafico Confronto Costi",
+    "note": "Nota: Il grafico mostra l'opzione più conveniente per ogni quantità di pasti. 'Miglior Mix Carnet' usa un algoritmo greedy per trovare combinazioni ottimali di carnet.",
+    "showGraph": "📊 Mostra Grafico Confronto Costi",
     "hideGraph": "Nascondi Grafico"
+  },
+  "tariffOptions": {
+    "payPerMeal": "Paga per Pasto",
+    "flat1MealPerDay": "Flat 1 Pasto al Giorno",
+    "flat2MealsPerDay": "Flat 2 Pasti al Giorno",
+    "carnet10": "Carnet 10 Pasti",
+    "carnet20": "Carnet 20 Pasti",
+    "carnet30": "Carnet 30 Pasti",
+    "carnet40": "Carnet 40 Pasti",
+    "carnetMix": "Miglior Mix Carnet",
+    "descriptions": {
+      "payPerMeal": "Paga solo per i pasti che consumi",
+      "flat1MealPerDay": "Tariffa fissa per 1 pasto al giorno per il periodo selezionato",
+      "flat2MealsPerDay": "Tariffa fissa per 2 pasti al giorno per il periodo selezionato",
+      "carnet10": "Carnet prepagato per 10 pasti",
+      "carnet20": "Carnet prepagato per 20 pasti",
+      "carnet30": "Carnet prepagato per 30 pasti",
+      "carnet40": "Carnet prepagato per 40 pasti",
+      "carnetMix": "Combinazione ottimale di diversi carnet calcolata con algoritmo greedy per minimizzare il costo totale"
+    }
   }
 }

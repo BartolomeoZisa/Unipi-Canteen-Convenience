@@ -37,9 +37,25 @@ export interface CarnetOption {
   pricePerMeal: number;
 }
 
+export interface CarnetMixItem {
+  carnet: CarnetOption;
+  quantity: number;
+  totalMeals: number;
+  totalCost: number;
+}
+
 export interface CalculationInput {
   isee: number;
   totalMeals: number;
+  mealsPerDay: number;
+  isScholarshipEligible: boolean;
+  preferredMealType: MealType;
+}
+
+export interface FormInput {
+  isee: number;
+  mealsPerDay: number;
+  days: number;
   isScholarshipEligible: boolean;
   preferredMealType: MealType;
 }
@@ -49,7 +65,7 @@ export interface TariffOption {
   name: string;
   totalCost: number;
   description: string;
-  type: 'per-meal' | 'flat' | 'carnet';
+  type: 'per-meal' | 'flat' | 'carnet' | 'carnet-mix';
 }
 
 export interface CalculationResult {
