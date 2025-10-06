@@ -5,7 +5,7 @@ A modern web application to calculate the most convenient canteen tariff option 
 ## 🚀 Live Demo
 
 The application is automatically deployed to GitHub Pages at:
-**https://bartolomeozisa.github.io/Unipi-Canteen-Conveniency/**
+**https://bartolomeozisa.github.io/Unipi-Canteen-Convenience/**
 
 ## Features
 
