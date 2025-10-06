@@ -72,6 +72,46 @@ describe('TariffCalculator', () => {
       const flatOptions = result.options.filter(o => o.type === 'flat');
       
       expect(flatOptions.length).toBeGreaterThan(0);
+      // Should only show under-75k tariffs
+      flatOptions.forEach(option => {
+        expect(option.name).toContain('Under 75k');
+      });
+    });
+
+    it('should only show appropriate flat tariffs based on ISEE level', () => {
+      // Test user over 75k ISEE
+      const highISEEInput: CalculationInput = {
+        isee: 90000, // Over 75k
+        mealsPerDay: 1,
+        totalMeals: 90,
+        isScholarshipEligible: false,
+        preferredMealType: MealType.COMPLETE
+      };
+
+      const highISEEResult = calculator.calculate(highISEEInput);
+      const highISEEFlatOptions = highISEEResult.options.filter(o => o.type === 'flat');
+      
+      // Should only show over-75k tariffs
+      highISEEFlatOptions.forEach(option => {
+        expect(option.name).toContain('Over 75k');
+      });
+
+      // Test user under 75k ISEE
+      const lowISEEInput: CalculationInput = {
+        isee: 60000, // Under 75k
+        mealsPerDay: 1,
+        totalMeals: 90,
+        isScholarshipEligible: false,
+        preferredMealType: MealType.COMPLETE
+      };
+
+      const lowISEEResult = calculator.calculate(lowISEEInput);
+      const lowISEEFlatOptions = lowISEEResult.options.filter(o => o.type === 'flat');
+      
+      // Should only show under-75k tariffs
+      lowISEEFlatOptions.forEach(option => {
+        expect(option.name).toContain('Under 75k');
+      });
     });
   });
 });

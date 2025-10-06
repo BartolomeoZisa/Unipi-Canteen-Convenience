@@ -91,7 +91,7 @@ export const FLAT_TARIFFS: FlatTariff[] = [
     name: 'Flat 1 meal/day - 3 months (Under 75k ISEE)',
     mealsPerDay: 1,
     durationMonths: 3,
-    price: 200,
+    price: 220,
     maxISEE: 75000
   },
   {

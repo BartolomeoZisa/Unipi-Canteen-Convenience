@@ -150,12 +150,17 @@ export class TariffCalculator implements ITariffCalculator {
       type: 'per-meal'
     });
 
-    // Calculate flat tariff options - only show tariffs that match meals per day
+    // Calculate flat tariff options - only show tariffs that match meals per day and ISEE eligibility
     FLAT_TARIFFS.forEach(tariff => {
       const cost = this.priceCalculator.calculateFlatTariffCost(input.isee, tariff);
       
-      // Only include flat tariffs that match the user's meals per day pattern
-      if (cost !== null && tariff.mealsPerDay === input.mealsPerDay) {
+      // Check if user is eligible for this specific tariff based on ISEE
+      const isEligibleForTariff = tariff.maxISEE ? 
+        input.isee <= tariff.maxISEE : 
+        input.isee > 75000; // Tariffs without maxISEE are for users over 75k
+      
+      // Only include flat tariffs that match the user's meals per day pattern AND ISEE eligibility
+      if (cost !== null && tariff.mealsPerDay === input.mealsPerDay && isEligibleForTariff) {
         const totalMealsInTariff = tariff.mealsPerDay * tariff.durationMonths * 30; // Approximate days per month
         
         // Calculate how many periods are needed and the total cost

@@ -26,7 +26,7 @@ A cost per meal based on ISEE range
 
 
 A flat tariff of 400 euros for 2 meals a day for 3 months if under 75k isee,
-A flat tariff of 200 euros for 1 meal a day for 3 months if under 75k isee,
+A flat tariff of 220 euros for 1 meal a day for 3 months if under 75k isee,
 A flat tariff of 500 euros for 2 meals a day for 3 months if under 75k isee,
 A flat tariff of 280 euros for 1 meal a day for 3 months if under 75k isee,
 Carnets for a meal each having the same cost as one meal
