@@ -42,7 +42,14 @@
     "recommended": "Opzione Consigliata",
     "allOptions": "Tutte le Opzioni Disponibili",
     "noOptions": "Nessuna opzione adatta trovata per i tuoi criteri",
-    "graphAvailable": "💡 Suggerimento: Usa il grafico qui sotto per vedere come cambiano i costi con diverse quantità di pasti!"
+    "graphAvailable": "💡 Suggerimento: Usa il grafico qui sotto per vedere come cambiano i costi con diverse quantità di pasti!",
+    "calculationBasedOn": "Calcolo basato su",
+    "meals": "Pasti",
+    "mealType": "Tipo di Pasto",
+    "scholarship": "Borsa di Studio",
+    "yes": "Sì",
+    "no": "No",
+    "best": "Migliore"
   },
   "errors": {
     "iseeRequired": "Il valore ISEE è obbligatorio",
@@ -63,8 +70,12 @@
     "title": "Confronto Costi per Quantità di Pasti",
     "subtitle": "Confronta come si comportano le diverse opzioni tariffarie al variare delle quantità di pasti basato sui tuoi ISEE e tipo di pasto",
     "note": "Nota: Il grafico mostra l'opzione più conveniente per ogni quantità di pasti. 'Miglior Mix Carnet' usa un algoritmo greedy per trovare combinazioni ottimali di carnet.",
-    "showGraph": "📊 Mostra Grafico Confronto Costi",
-    "hideGraph": "Nascondi Grafico"
+    "showGraph": "Mostra Grafico Confronto Costi",
+    "hideGraph": "Nascondi Grafico",
+    "numberOfMeals": "Numero di Pasti",
+    "cost": "Costo (€)",
+    "meals": "pasti",
+    "bestOption": "Opzione migliore"
   },
   "tariffOptions": {
     "payPerMeal": "Paga per Pasto",
@@ -73,8 +84,12 @@
     "carnet10": "Carnet 10 Pasti",
     "carnet20": "Carnet 20 Pasti",
     "carnet30": "Carnet 30 Pasti",
+    "carnet5": "Carnet 5 Pasti",
     "carnet40": "Carnet 40 Pasti",
     "carnetMix": "Miglior Mix Carnet",
+    "flatTariff": "Tariffa fissa {{mealsPerDay}} pasto/giorno - {{months}} mesi ({{underOver}} {{iseeThreshold}}k ISEE)",
+    "under": "Sotto",
+    "over": "Sopra",
     "descriptions": {
       "payPerMeal": "Paga solo per i pasti che consumi",
       "flat1MealPerDay": "Tariffa fissa per 1 pasto al giorno per il periodo selezionato",
@@ -85,5 +100,12 @@
       "carnet40": "Carnet prepagato per 40 pasti",
       "carnetMix": "Combinazione ottimale di diversi carnet calcolata con algoritmo greedy per minimizzare il costo totale"
     }
+  },
+  "carnet": {
+    "buyXgetY": "Compra {{buy}} pasti, ricevi {{free}} gratis",
+    "bestMix": "Mix migliore",
+    "individualMeals": "pasti individuali",
+    "perMeal": "per pasto {{mealType}}",
+    "free": "gratis"
   }
 }

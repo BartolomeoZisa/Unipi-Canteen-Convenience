@@ -77,14 +77,14 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
       const data = payload[0].payload as GraphDataPoint;
       return (
         <div className="bg-white p-3 border border-gray-300 rounded-lg shadow-lg">
-          <p className="font-semibold">{`${label} meals`}</p>
+          <p className="font-semibold">{`${label} ${t('graph.meals')}`}</p>
           {payload.map((entry: any, index: number) => (
             <p key={index} style={{ color: entry.color }} className="text-sm">
               {`${entry.name}: €${entry.value?.toFixed(2)}`}
             </p>
           ))}
           <p className="text-xs text-gray-600 mt-1 font-medium">
-            Best option: {data.recommended}
+            {t('graph.bestOption')}: {data.recommended}
           </p>
         </div>
       );
@@ -111,12 +111,12 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
               dataKey="meals" 
               stroke="#666"
               fontSize={12}
-              label={{ value: 'Number of Meals', position: 'insideBottom', offset: -20 }}
+              label={{ value: t('graph.numberOfMeals'), position: 'insideBottom', offset: -20 }}
             />
             <YAxis 
               stroke="#666"
               fontSize={12}
-              label={{ value: 'Cost (€)', angle: -90, position: 'insideLeft' }}
+              label={{ value: t('graph.cost'), angle: -90, position: 'insideLeft' }}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend 
@@ -129,7 +129,7 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
               dataKey="perMeal" 
               stroke="#3b82f6" 
               strokeWidth={2}
-              name="Per Meal"
+              name={t('tariffOptions.payPerMeal')}
               connectNulls={false}
             />
             
@@ -138,7 +138,7 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
               dataKey="flatTariff" 
               stroke="#10b981" 
               strokeWidth={2}
-              name="Flat Tariff"
+              name="Tariffa Flat"
               connectNulls={false}
             />
             
@@ -156,7 +156,7 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
               dataKey="carnetMix" 
               stroke="#8b5cf6" 
               strokeWidth={2}
-              name="Best Carnet Mix"
+              name={t('tariffOptions.carnetMix')}
               connectNulls={false}
             />
           </LineChart>

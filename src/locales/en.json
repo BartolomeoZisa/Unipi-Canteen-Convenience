@@ -42,7 +42,14 @@
     "recommended": "Recommended Option",
     "allOptions": "All Available Options",
     "noOptions": "No suitable options found for your criteria",
-    "graphAvailable": "💡 Tip: Use the graph below to see how costs change with different meal quantities!"
+    "graphAvailable": "💡 Tip: Use the graph below to see how costs change with different meal quantities!",
+    "calculationBasedOn": "Calculation based on",
+    "meals": "Meals",
+    "mealType": "Meal Type",
+    "scholarship": "Scholarship",
+    "yes": "Yes",
+    "no": "No",
+    "best": "Best"
   },
   "errors": {
     "iseeRequired": "ISEE value is required",
@@ -64,6 +71,41 @@
     "subtitle": "Compare how different tariff options perform as meal quantities change based on your ISEE and meal type",
     "note": "Note: Graph shows the most cost-effective option at each meal quantity. 'Best Carnet Mix' uses a greedy algorithm to find optimal carnet combinations.",
     "showGraph": "Show Cost Comparison Graph",
-    "hideGraph": "Hide Graph"
+    "hideGraph": "Hide Graph",
+    "numberOfMeals": "Number of Meals",
+    "cost": "Cost (€)",
+    "meals": "meals",
+    "bestOption": "Best option"
+  },
+  "tariffOptions": {
+    "payPerMeal": "Pay per Meal",
+    "flat1MealPerDay": "Flat 1 Meal per Day",
+    "flat2MealsPerDay": "Flat 2 Meals per Day",
+    "carnet5": "Carnet 5 Meals",
+    "carnet10": "Carnet 10 Meals",
+    "carnet20": "Carnet 20 Meals",
+    "carnet30": "Carnet 30 Meals",
+    "carnet40": "Carnet 40 Meals",
+    "carnetMix": "Best Carnet Mix",
+    "flatTariff": "Flat {{mealsPerDay}} meal/day - {{months}} months ({{underOver}} {{iseeThreshold}}k ISEE)",
+    "under": "Under",
+    "over": "Over",
+    "descriptions": {
+      "payPerMeal": "Pay only for the meals you consume",
+      "flat1MealPerDay": "Fixed rate for 1 meal per day for the selected period",
+      "flat2MealsPerDay": "Fixed rate for 2 meals per day for the selected period",
+      "carnet10": "Prepaid carnet for 10 meals",
+      "carnet20": "Prepaid carnet for 20 meals",
+      "carnet30": "Prepaid carnet for 30 meals",
+      "carnet40": "Prepaid carnet for 40 meals",
+      "carnetMix": "Optimal combination of different carnets calculated with greedy algorithm to minimize total cost"
+    }
+  },
+  "carnet": {
+    "buyXgetY": "Buy {{buy}} meals, get {{free}} free",
+    "bestMix": "Best mix",
+    "individualMeals": "individual meals",
+    "perMeal": "per {{mealType}} meal",
+    "free": "free"
   }
 }
