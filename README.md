@@ -1,6 +1,11 @@
-# Canteen Convenience Calculator
+# Canteen Convenience Calculator 🍽️
 
-A modern web application to calculate the most convenient canteen tariff option based on ISEE (Indicatore della Situazione Economica Equivalente) and meal requirements.
+A modern web application to calculate the most convenient canteen tariff option based on ISEE (Indicatore della Situazione Economica Equivalente) and meal requirements for University of Pisa students.
+
+## 🚀 Live Demo
+
+The application is automatically deployed to GitHub Pages at:
+**https://bartolomeozisa.github.io/Unipi-Canteen-Conveniency/**
 
 ## Features
 
@@ -122,6 +127,35 @@ src/
 └── main.tsx             # Application entry point
 ```
 
+## 🚀 Deployment
+
+The application is automatically deployed to GitHub Pages using GitHub Actions when changes are pushed to the `main` branch.
+
+### Deployment Process
+1. **Automatic Trigger**: Push to `main` branch triggers deployment
+2. **Build & Test**: Runs tests and builds the application  
+3. **Deploy**: Deploys to GitHub Pages automatically
+4. **Live URL**: Available at https://bartolomeozisa.github.io/Unipi-Canteen-Conveniency/
+
+### Manual Deployment
+If you need to deploy manually:
+```bash
+# Build the application
+npm run build
+
+# The built files will be in the `dist` folder
+# Deploy the contents of `dist` to your hosting service
+```
+
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm test` - Run test suite
+- `npm test:watch` - Run tests in watch mode
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
+- `npm run preview` - Preview production build
+
 ## Contributing
 
 1. Fork the repository
@@ -133,3 +167,7 @@ src/
 ## Support
 
 For support and questions, please open an issue in the GitHub repository.
+
+---
+
+**Made with ❤️ for University of Pisa students**
