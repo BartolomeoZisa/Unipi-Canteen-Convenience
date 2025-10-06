@@ -3,25 +3,19 @@ ISEE and number of meals must be inputted
 There are 3 ways to pay the canteen:
 A cost per meal based on ISEE range
 
-Fascia ISEE | Pasto completo | Pasto ridotto A | Pasto ridotto B | Pasto ridotto C
-idonei borsa di studio ARDSU*
-gratuito | gratuito | gratuito | gratuito
-≤ € 27.000
-€ 2,80 | € 1,80 | € 2,30 | € 1,40
-> € 27.000 ≤ € 30.000
-€ 3,00 | € 2,00 | € 2,50 | € 1,80
-> € 30.000 ≤ € 45.000
-€ 4,50 | € 3,00 | € 3,50 | € 2,30
-> € 45.000 ≤ € 60.000
-€ 5,50 | € 3,60 | € 4,20 | € 2,70
-> € 60.000 ≤ € 75.000
-€ 6,50 | € 4,20 | € 4,90 | € 3,20
-> € 75.000 ≤ € 100.000
-€ 7,50 | € 4,80 | € 5,60 | € 3,60
-> € 100.000
-€ 8,50 | € 5,40 | € 6,30 | € 4,00
+| **Fascia ISEE**                   | **Pasto completo** | **Pasto ridotto A** | **Pasto ridotto B** | **Pasto ridotto C** |
+| --------------------------------- | ------------------ | ------------------- | ------------------- | ------------------- |
+| **Idonei borsa di studio ARDSU*** | gratuito           | gratuito            | gratuito            | gratuito            |
+| **≤ € 27.000**                    | € 2,80             | € 1,80              | € 2,30              | € 1,40              |
+| **> € 27.000 ≤ € 30.000**         | € 3,00             | € 2,00              | € 2,50              | € 1,80              |
+| **> € 30.000 ≤ € 45.000**         | € 4,50             | € 3,00              | € 3,50              | € 2,30              |
+| **> € 45.000 ≤ € 60.000**         | € 5,50             | € 3,60              | € 4,20              | € 2,70              |
+| **> € 60.000 ≤ € 75.000**         | € 6,50             | € 4,20              | € 4,90              | € 3,20              |
+| **> € 75.000 ≤ € 100.000**        | € 7,50             | € 4,80              | € 5,60              | € 3,60              |
+| **> € 100.000**                   | € 8,50             | € 5,40              | € 6,30              | € 4,00              |
 
-| Tipo pasto                        | Contenuto                                                                                                                                                                          |
+
+| **Tipo pasto**                    | **Contenuto**                                                                                                                                                                      |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Pasto completo**                | - 1 primo<br>- 1 secondo<br>- 1 contorno<br>- 1 frutto o yogurt o dessert<br>- pane<br>- bevanda                                                                                   |
 | **Pasto ridotto A** (con primo)   | - 1 primo<br>- 1 contorno<br>- 1 frutto o yogurt o dessert<br>- pane<br>- bevanda                                                                                                  |
