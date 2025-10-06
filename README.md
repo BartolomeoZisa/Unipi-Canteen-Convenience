@@ -135,7 +135,7 @@ The application is automatically deployed to GitHub Pages using GitHub Actions w
 1. **Automatic Trigger**: Push to `main` branch triggers deployment
 2. **Build & Test**: Runs tests and builds the application  
 3. **Deploy**: Deploys to GitHub Pages automatically
-4. **Live URL**: Available at https://bartolomeozisa.github.io/Unipi-Canteen-Conveniency/
+4. **Live URL**: Available at https://bartolomeozisa.github.io/Unipi-Canteen-Convenience/
 
 ### Manual Deployment
 If you need to deploy manually:
