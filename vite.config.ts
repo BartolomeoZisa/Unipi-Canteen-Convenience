@@ -14,7 +14,7 @@ export default defineConfig({
     port: 3000,
     open: true
   },
-  base: '/Unipi-Canteen-Conveniency/',
+  base: '/Unipi-Canteen-Convenience/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
