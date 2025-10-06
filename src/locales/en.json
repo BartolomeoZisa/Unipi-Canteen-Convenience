@@ -35,7 +35,8 @@
     "title": "Tariff Options",
     "recommended": "Recommended Option",
     "allOptions": "All Available Options",
-    "noOptions": "No suitable options found for your criteria"
+    "noOptions": "No suitable options found for your criteria",
+    "graphAvailable": "💡 Tip: Use the graph below to see how costs change with different meal quantities!"
   },
   "errors": {
     "iseeRequired": "ISEE value is required",
@@ -49,5 +50,12 @@
   "mealInfo": {
     "title": "Meal Types Information",
     "subtitle": "Click to see what's included in each meal type"
+  },
+  "graph": {
+    "title": "Cost Comparison Across Meal Quantities",
+    "subtitle": "Compare how different tariff options perform as meal quantities change",
+    "note": "Note: Graph shows the most cost-effective option at each meal quantity. For high meal quantities, flat tariffs may require multiple periods.",
+    "showGraph": "Show Cost Comparison Graph",
+    "hideGraph": "Hide Graph"
   }
 }

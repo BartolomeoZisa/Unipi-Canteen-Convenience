@@ -93,6 +93,13 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ results }) => {
         </div>
       </div>
 
+      {/* Graph Tip */}
+      <div className="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-lg">
+        <p className="text-sm text-purple-700">
+          {t('results.graphAvailable')}
+        </p>
+      </div>
+
       {/* Input Summary */}
       <div className="mt-6 pt-6 border-t border-gray-200">
         <h4 className="text-sm font-medium text-gray-700 mb-2">Calculation based on:</h4>

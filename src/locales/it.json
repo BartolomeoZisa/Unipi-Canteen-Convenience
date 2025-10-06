@@ -35,7 +35,8 @@
     "title": "Opzioni Tariffarie",
     "recommended": "Opzione Consigliata",
     "allOptions": "Tutte le Opzioni Disponibili",
-    "noOptions": "Nessuna opzione adatta trovata per i tuoi criteri"
+    "noOptions": "Nessuna opzione adatta trovata per i tuoi criteri",
+    "graphAvailable": "💡 Suggerimento: Usa il grafico qui sotto per vedere come cambiano i costi con diverse quantità di pasti!"
   },
   "errors": {
     "iseeRequired": "Il valore ISEE è obbligatorio",
@@ -49,5 +50,12 @@
   "mealInfo": {
     "title": "Informazioni sui Tipi di Pasto",
     "subtitle": "Clicca per vedere cosa è incluso in ogni tipo di pasto"
+  },
+  "graph": {
+    "title": "Confronto Costi per Quantità di Pasti",
+    "subtitle": "Confronta come si comportano le diverse opzioni tariffarie al variare delle quantità di pasti",
+    "note": "Nota: Il grafico mostra l'opzione più conveniente per ogni quantità di pasti. Per grandi quantità di pasti, le tariffe flat potrebbero richiedere più periodi.",
+    "showGraph": "Mostra Grafico Confronto Costi",
+    "hideGraph": "Nascondi Grafico"
   }
 }

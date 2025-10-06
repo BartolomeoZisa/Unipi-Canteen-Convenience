@@ -100,15 +100,23 @@ export class TariffCalculator implements ITariffCalculator {
       const cost = this.priceCalculator.calculateFlatTariffCost(input.isee, tariff);
       if (cost !== null) {
         const totalMealsInTariff = tariff.mealsPerDay * tariff.durationMonths * 30; // Approximate days per month
-        if (input.totalMeals <= totalMealsInTariff) {
-          options.push({
-            id: tariff.id,
-            name: tariff.name,
-            totalCost: cost,
-            description: `€${cost} for ${tariff.mealsPerDay} meals/day for ${tariff.durationMonths} months`,
-            type: 'flat'
-          });
-        }
+        
+        // Calculate how many periods are needed and the total cost
+        const periodsNeeded = Math.ceil(input.totalMeals / totalMealsInTariff);
+        const totalCost = cost * periodsNeeded;
+        
+        // Always include flat tariffs, but adjust description for multiple periods
+        const description = periodsNeeded === 1 
+          ? `€${cost} for ${tariff.mealsPerDay} meals/day for ${tariff.durationMonths} months`
+          : `€${cost} × ${periodsNeeded} periods (${tariff.mealsPerDay} meals/day for ${tariff.durationMonths} months each)`;
+          
+        options.push({
+          id: tariff.id,
+          name: tariff.name,
+          totalCost: totalCost,
+          description: description,
+          type: 'flat'
+        });
       }
     });
 

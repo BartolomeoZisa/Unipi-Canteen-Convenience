@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Calculator, Globe, Info, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calculator, Globe, Info, ChevronDown, ChevronUp, BarChart3 } from 'lucide-react';
 import { CalculationInput, MealType, CalculationResult } from '@/types';
 import { TariffCalculator, PriceCalculator } from '@/services/calculationService';
 import { ResultsDisplay } from './ResultsDisplay';
+import { CostComparisonGraph } from './CostComparisonGraph';
 
 // Factory pattern for creating calculator instances (Dependency Injection)
 const createCalculator = () => {
@@ -22,6 +23,7 @@ export const TariffCalculatorForm: React.FC = () => {
   const [results, setResults] = useState<CalculationResult | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [showMealInfo, setShowMealInfo] = useState<boolean>(false);
+  const [showGraph, setShowGraph] = useState<boolean>(false);
 
   const calculator = createCalculator();
 
@@ -233,6 +235,33 @@ export const TariffCalculatorForm: React.FC = () => {
 
         {/* Results Display */}
         {results && <ResultsDisplay results={results} />}
+        
+        {/* Graph Toggle Button */}
+        {formData.isee && formData.preferredMealType && (
+          <div className="text-center mb-6">
+            <button
+              type="button"
+              onClick={() => setShowGraph(!showGraph)}
+              className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition duration-200"
+            >
+              <BarChart3 className="w-5 h-5" />
+              {showGraph ? t('graph.hideGraph') : t('graph.showGraph')}
+            </button>
+          </div>
+        )}
+
+        {/* Cost Comparison Graph */}
+        {showGraph && formData.isee && formData.preferredMealType && (
+          <CostComparisonGraph
+            baseInput={{
+              isee: formData.isee,
+              isScholarshipEligible: formData.isScholarshipEligible || false,
+              preferredMealType: formData.preferredMealType
+            }}
+            maxMeals={300}
+            stepSize={5}
+          />
+        )}
       </div>
     </div>
   );
