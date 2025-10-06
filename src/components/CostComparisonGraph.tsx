@@ -97,15 +97,15 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
         </p>
       </div>
       
-      <div className="h-96 w-full">
+      <div className="h-[500px] w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={graphData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <LineChart data={graphData} margin={{ top: 20, right: 30, left: 40, bottom: 80 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
             <XAxis 
               dataKey="meals" 
               stroke="#666"
               fontSize={12}
-              label={{ value: 'Number of Meals', position: 'insideBottom', offset: -10 }}
+              label={{ value: 'Number of Meals', position: 'insideBottom', offset: -20 }}
             />
             <YAxis 
               stroke="#666"
@@ -113,7 +113,10 @@ export const CostComparisonGraph: React.FC<CostComparisonGraphProps> = ({
               label={{ value: 'Cost (€)', angle: -90, position: 'insideLeft' }}
             />
             <Tooltip content={<CustomTooltip />} />
-            <Legend />
+            <Legend 
+              wrapperStyle={{ paddingTop: '20px' }}
+              iconType="line"
+            />
             
             <Line 
               type="monotone" 

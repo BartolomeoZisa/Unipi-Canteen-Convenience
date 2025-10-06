@@ -53,7 +53,7 @@
   },
   "graph": {
     "title": "Confronto Costi per Quantità di Pasti",
-    "subtitle": "Confronta come si comportano le diverse opzioni tariffarie al variare delle quantità di pasti",
+    "subtitle": "Confronta come si comportano le diverse opzioni tariffarie al variare delle quantità di pasti basato sui tuoi ISEE e tipo di pasto",
     "note": "Nota: Il grafico mostra l'opzione più conveniente per ogni quantità di pasti. Per grandi quantità di pasti, le tariffe flat potrebbero richiedere più periodi.",
     "showGraph": "Mostra Grafico Confronto Costi",
     "hideGraph": "Nascondi Grafico"

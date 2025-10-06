@@ -233,10 +233,7 @@ export const TariffCalculatorForm: React.FC = () => {
           </form>
         </div>
 
-        {/* Results Display */}
-        {results && <ResultsDisplay results={results} />}
-        
-        {/* Graph Toggle Button */}
+        {/* Graph Toggle Button - Available after ISEE and meal type are set */}
         {formData.isee && formData.preferredMealType && (
           <div className="text-center mb-6">
             <button
@@ -250,7 +247,7 @@ export const TariffCalculatorForm: React.FC = () => {
           </div>
         )}
 
-        {/* Cost Comparison Graph */}
+        {/* Cost Comparison Graph - Independent from results */}
         {showGraph && formData.isee && formData.preferredMealType && (
           <CostComparisonGraph
             baseInput={{
@@ -262,6 +259,9 @@ export const TariffCalculatorForm: React.FC = () => {
             stepSize={5}
           />
         )}
+
+        {/* Results Display */}
+        {results && <ResultsDisplay results={results} />}
       </div>
     </div>
   );

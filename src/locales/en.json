@@ -53,7 +53,7 @@
   },
   "graph": {
     "title": "Cost Comparison Across Meal Quantities",
-    "subtitle": "Compare how different tariff options perform as meal quantities change",
+    "subtitle": "Compare how different tariff options perform as meal quantities change based on your ISEE and meal type",
     "note": "Note: Graph shows the most cost-effective option at each meal quantity. For high meal quantities, flat tariffs may require multiple periods.",
     "showGraph": "Show Cost Comparison Graph",
     "hideGraph": "Hide Graph"
