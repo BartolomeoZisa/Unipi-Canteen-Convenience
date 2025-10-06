@@ -31,6 +31,7 @@ describe('TariffCalculator', () => {
     it('should recommend cheapest option for low ISEE user', () => {
       const input: CalculationInput = {
         isee: 25000,
+        mealsPerDay: 2,
         totalMeals: 60,
         isScholarshipEligible: false,
         preferredMealType: MealType.COMPLETE
@@ -46,6 +47,7 @@ describe('TariffCalculator', () => {
     it('should return free meals for scholarship eligible users', () => {
       const input: CalculationInput = {
         isee: 25000,
+        mealsPerDay: 1,
         totalMeals: 30,
         isScholarshipEligible: true,
         preferredMealType: MealType.COMPLETE
@@ -60,6 +62,7 @@ describe('TariffCalculator', () => {
     it('should include flat tariffs for eligible users', () => {
       const input: CalculationInput = {
         isee: 50000, // Under 75k, eligible for flat tariffs
+        mealsPerDay: 1,
         totalMeals: 90, // 1 meal per day for 3 months
         isScholarshipEligible: false,
         preferredMealType: MealType.COMPLETE
