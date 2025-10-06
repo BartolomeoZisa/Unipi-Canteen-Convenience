@@ -33,7 +33,9 @@
       "label": "Idoneo alla Borsa di Studio ARDSU",
       "help": "Seleziona se sei idoneo alla borsa di studio ARDSU (pasti gratuiti)"
     },
-    "calculate": "Calcola Opzioni"
+    "calculate": "Calcola Opzioni",
+    "totalMeals": "Totale pasti",
+    "whatsIncluded": "Cosa è incluso"
   },
   "results": {
     "title": "Opzioni Tariffarie",

@@ -216,7 +216,7 @@ export const TariffCalculatorForm: React.FC = () => {
             {formData.mealsPerDay && formData.days && (
               <div className="p-3 bg-blue-50 border border-blue-200 rounded-md">
                 <p className="text-sm text-blue-800">
-                  <strong>Total meals: {formData.mealsPerDay * formData.days}</strong>
+                  <strong>{t('form.totalMeals')}: {formData.mealsPerDay * formData.days}</strong>
                 </p>
               </div>
             )}
@@ -241,7 +241,7 @@ export const TariffCalculatorForm: React.FC = () => {
               {/* Meal Description */}
               <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-md">
                 <p className="text-sm text-blue-800">
-                  <strong>What's included:</strong> {t(`form.mealType.descriptions.${formData.preferredMealType || 'complete'}`)}
+                  <strong>{t('form.whatsIncluded')}:</strong> {t(`form.mealType.descriptions.${formData.preferredMealType || 'complete'}`)}
                 </p>
               </div>
             </div>

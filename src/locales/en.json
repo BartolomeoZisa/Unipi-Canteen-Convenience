@@ -33,7 +33,9 @@
       "label": "Eligible for ARDSU Scholarship",
       "help": "Check if you are eligible for ARDSU scholarship (free meals)"
     },
-    "calculate": "Calculate Options"
+    "calculate": "Calculate Options",
+    "totalMeals": "Total meals",
+    "whatsIncluded": "What's included"
   },
   "results": {
     "title": "Tariff Options",
