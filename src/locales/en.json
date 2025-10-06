@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Canteen Convenience Calculator",
+    "subtitle": "Find the most convenient tariff option for your needs"
+  },
+  "form": {
+    "isee": {
+      "label": "ISEE Value",
+      "placeholder": "Enter your ISEE value in €"
+    },
+    "meals": {
+      "label": "Number of Meals",
+      "placeholder": "Total meals needed"
+    },
+    "mealType": {
+      "label": "Preferred Meal Type",
+      "complete": "Complete Meal",
+      "reducedA": "Reduced Meal A (with first course)",
+      "reducedB": "Reduced Meal B (with second course)",
+      "reducedC": "Reduced Meal C",
+      "descriptions": {
+        "complete": "1 first course + 1 second course + 1 side dish + 1 fruit/yogurt/dessert + bread + beverage",
+        "reducedA": "1 first course + 1 side dish + 1 fruit/yogurt/dessert + bread + beverage",
+        "reducedB": "1 second course + 1 side dish + 1 fruit/yogurt/dessert + bread + beverage",
+        "reducedC": "Choice of: 1 first course OR 1 second course OR 2 side dishes + 1 fruit/dessert + bread + beverage"
+      }
+    },
+    "scholarship": {
+      "label": "Eligible for ARDSU Scholarship",
+      "help": "Check if you are eligible for ARDSU scholarship (free meals)"
+    },
+    "calculate": "Calculate Options"
+  },
+  "results": {
+    "title": "Tariff Options",
+    "recommended": "Recommended Option",
+    "allOptions": "All Available Options",
+    "noOptions": "No suitable options found for your criteria"
+  },
+  "errors": {
+    "iseeRequired": "ISEE value is required",
+    "iseeInvalid": "Please enter a valid ISEE value",
+    "mealsRequired": "Number of meals is required",
+    "mealsInvalid": "Please enter a valid number of meals"
+  },
+  "language": {
+    "select": "Select Language"
+  },
+  "mealInfo": {
+    "title": "Meal Types Information",
+    "subtitle": "Click to see what's included in each meal type"
+  }
+}

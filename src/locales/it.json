@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Calcolatore Convenienza Mensa",
+    "subtitle": "Trova l'opzione tariffaria più conveniente per le tue esigenze"
+  },
+  "form": {
+    "isee": {
+      "label": "Valore ISEE",
+      "placeholder": "Inserisci il tuo valore ISEE in €"
+    },
+    "meals": {
+      "label": "Numero di Pasti",
+      "placeholder": "Pasti totali necessari"
+    },
+    "mealType": {
+      "label": "Tipo di Pasto Preferito",
+      "complete": "Pasto Completo",
+      "reducedA": "Pasto Ridotto A (con primo)",
+      "reducedB": "Pasto Ridotto B (con secondo)",
+      "reducedC": "Pasto Ridotto C",
+      "descriptions": {
+        "complete": "1 primo + 1 secondo + 1 contorno + 1 frutto/yogurt/dessert + pane + bevanda",
+        "reducedA": "1 primo + 1 contorno + 1 frutto/yogurt/dessert + pane + bevanda",
+        "reducedB": "1 secondo + 1 contorno + 1 frutto/yogurt/dessert + pane + bevanda",
+        "reducedC": "A scelta: 1 primo O 1 secondo O 2 contorni + 1 frutto/dessert + pane + bevanda"
+      }
+    },
+    "scholarship": {
+      "label": "Idoneo alla Borsa di Studio ARDSU",
+      "help": "Seleziona se sei idoneo alla borsa di studio ARDSU (pasti gratuiti)"
+    },
+    "calculate": "Calcola Opzioni"
+  },
+  "results": {
+    "title": "Opzioni Tariffarie",
+    "recommended": "Opzione Consigliata",
+    "allOptions": "Tutte le Opzioni Disponibili",
+    "noOptions": "Nessuna opzione adatta trovata per i tuoi criteri"
+  },
+  "errors": {
+    "iseeRequired": "Il valore ISEE è obbligatorio",
+    "iseeInvalid": "Inserisci un valore ISEE valido",
+    "mealsRequired": "Il numero di pasti è obbligatorio",
+    "mealsInvalid": "Inserisci un numero valido di pasti"
+  },
+  "language": {
+    "select": "Seleziona Lingua"
+  },
+  "mealInfo": {
+    "title": "Informazioni sui Tipi di Pasto",
+    "subtitle": "Clicca per vedere cosa è incluso in ogni tipo di pasto"
+  }
+}
