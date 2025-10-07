@@ -33,6 +33,8 @@ Carnets for a meal each having the same cost as one meal
 5 + 1 free
 10 + 2 free
 20 + 5 free
+With flat subscriptions and prepaid meal packages, only full meals can be consumed
+
 
 Regarding the structure of the system:
 The system must follow SOLID principles.

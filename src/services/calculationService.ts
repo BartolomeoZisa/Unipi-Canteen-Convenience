@@ -18,8 +18,8 @@ export interface ITariffCalculator {
 export interface IPriceCalculator {
   calculatePerMealPrice(isee: number, mealType: MealType, isScholarshipEligible: boolean): number;
   calculateFlatTariffCost(isee: number, tariff: FlatTariff): number | null;
-  calculateCarnetCost(isee: number, mealType: MealType, carnet: CarnetOption, totalMeals: number): number | null;
-  calculateBestCarnetMix(isee: number, mealType: MealType, totalMeals: number): { mix: CarnetMixItem[], totalCost: number } | null;
+  calculateCarnetCost(isee: number, carnet: CarnetOption, totalMeals: number): number | null;
+  calculateBestCarnetMix(isee: number, totalMeals: number): { mix: CarnetMixItem[], totalCost: number } | null;
 }
 
 // Single Responsibility Principle - each class has one reason to change
@@ -52,8 +52,9 @@ export class PriceCalculator implements IPriceCalculator {
     return tariff.price;
   }
 
-  calculateCarnetCost(isee: number, mealType: MealType, carnet: CarnetOption, totalMeals: number): number | null {
-    const pricePerMeal = this.calculatePerMealPrice(isee, mealType, false);
+  calculateCarnetCost(isee: number, carnet: CarnetOption, totalMeals: number): number | null {
+    // Carnets always use complete meal pricing
+    const pricePerMeal = this.calculatePerMealPrice(isee, MealType.COMPLETE, false);
     const totalCarnetMeals = carnet.paidMeals + carnet.freeMeals;
     
     if (totalMeals < totalCarnetMeals) {
@@ -66,8 +67,9 @@ export class PriceCalculator implements IPriceCalculator {
     return totalCost;
   }
 
-  calculateBestCarnetMix(isee: number, mealType: MealType, totalMeals: number): { mix: CarnetMixItem[], totalCost: number } | null {
-    const pricePerMeal = this.calculatePerMealPrice(isee, mealType, false);
+  calculateBestCarnetMix(isee: number, totalMeals: number): { mix: CarnetMixItem[], totalCost: number } | null {
+    // Carnets always use complete meal pricing
+    const pricePerMeal = this.calculatePerMealPrice(isee, MealType.COMPLETE, false);
     
     // Calculate efficiency (meals per euro) for each carnet type
     const carnetEfficiencies = CARNET_OPTIONS.map(carnet => {
@@ -186,7 +188,6 @@ export class TariffCalculator implements ITariffCalculator {
     CARNET_OPTIONS.forEach((carnet, index) => {
       const cost = this.priceCalculator.calculateCarnetCost(
         input.isee, 
-        input.preferredMealType, 
         carnet, 
         input.totalMeals
       );
@@ -205,7 +206,6 @@ export class TariffCalculator implements ITariffCalculator {
     // Calculate best carnet mix option
     const carnetMixResult = this.priceCalculator.calculateBestCarnetMix(
       input.isee,
-      input.preferredMealType,
       input.totalMeals
     );
 
